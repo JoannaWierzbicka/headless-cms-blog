@@ -9,7 +9,7 @@
 
 [Headless CMS](https://www.unity.pl/blog/co-warto-wiedziec-o-headless-cms/) to narzędzie, które pozwala tworzyć zawartość strony bez potrzeby budowania dedykowanego panelu administracyjnego. 
 
-Przy pomocy odpowiedniego [UI](https://en.wikipedia.org/wiki/User_interface_design) możesz „wyklikać” odpowiednie pola, które stworzą strukturę dla zawartości strony.
+Przy pomocy odpowiedniego [UI](https://en.wikipedia.org/wiki/User_interface_design) możesz „wyklikać” potrzebne pola, które stworzą strukturę dla zawartości strony.
 
 Treści i zasoby uzupełnia się przez wygodny formularz (możesz to robić Ty, klient czy pracownik), a następnie pobiera przez API. 
 
@@ -57,8 +57,7 @@ W dokumentacji Prismica znajdziesz [przykłady implementacji dla Reacta](https:/
 
 Proponuję zapoznać się z nimi, zanim przejdziesz do własnej implementacji. 
 
-W przykładach znajdziesz również wykorzystanie przydatnego narzędzia, [React Helmet](https://www.npmjs.com/package/react-helmet), które pozwala w wygodny sposób zarządzać elementami zapisanym w `<head>`, np. `<title>`.
-
+W przykładach znajdziesz również wykorzystanie przydatnego narzędzia [React Helmet](https://www.npmjs.com/package/react-helmet), które pozwala w wygodny sposób zarządzać elementami zapisanym w `<head>`, np. `<title>`.
 
 
 &nbsp;

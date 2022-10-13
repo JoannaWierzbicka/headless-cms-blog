@@ -1,0 +1,10 @@
+.articles {
+    padding: 15px;
+}
+
+.articleList {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    padding: 8px
+}

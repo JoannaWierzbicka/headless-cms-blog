@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { HashRouter as Router } from 'react-router-dom'
 
 import App from './App'
 import { PrismicProvider } from '@prismicio/react'
@@ -9,11 +10,14 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PrismicProvider client={client}>
-      <App />
-    </PrismicProvider>
-  </React.StrictMode>,
+  <Router>
+    <React.StrictMode>
+      <PrismicProvider client={client}>
+        <App />
+      </PrismicProvider>
+    </React.StrictMode>
+  </Router>
+  ,
   document.getElementById('root')
 )
 

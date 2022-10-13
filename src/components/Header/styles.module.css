@@ -1,0 +1,11 @@
+.header {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    min-width: 30%;
+    display: flex;
+    justify-content: space-around;
+}

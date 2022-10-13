@@ -1,18 +1,12 @@
-import React from 'react'
-import { usePrismicDocumentByUID } from '@prismicio/react'
+import { useAllPrismicDocumentsByType } from '@prismicio/react'
 
-export const getDataFromPrismic = () => {
-  const [document] = usePrismicDocumentByUID('post', 'post-nr-2')
-  console.log(document)
+export async function FetchData () {
+  const [document] = useAllPrismicDocumentsByType('post')
 
-  const data = document ? document.data : ''
+  const data = await document
   console.log(data)
 
-  return (
-    <div>
-      {data.date}
-    </div>
-  )
+  return data
 }
 
-export default getDataFromPrismic
+export default FetchData

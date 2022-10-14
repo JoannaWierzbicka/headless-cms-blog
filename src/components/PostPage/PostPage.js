@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid'
 import classes from './styles.module.css'
 import Header from '../Header/Header'
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 
 export const PostPage = () => {
   const { id } = useParams()
@@ -24,7 +24,7 @@ export const PostPage = () => {
       {
         !data
           ? 'Loading...' :
-          <article className={classes.post}>
+          <><article className={classes.post}>
             <h3>{data.data.title[0].text}</h3>
             {data.data.text.map(text => {
               return (<p key={uuid()}>{text.text}</p>)
@@ -34,7 +34,10 @@ export const PostPage = () => {
               alt={data.data.image.alt}
             />
             <span>Published on: {data.data.date}</span>
-          </article>
+            </article>
+            <NavLink to={'/articles'}>View all posts</NavLink>
+          </>
+
       }
 
     </div>

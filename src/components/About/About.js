@@ -3,17 +3,23 @@ import React from 'react'
 
 import classes from './styles.module.css'
 import Header from '../Header/Header'
+import { useSinglePrismicDocument } from '@prismicio/react'
 
-export const About = (props) => {
+export const About = () => {
+  const [about] = useSinglePrismicDocument('about')
   return (
     <>
       <Header/>
-      <div
-        className={classes.about}
-      ><h3>ABOUT ME</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor et recusandae cum accusantium illum quaerat eius totam, sunt sed consequuntur iure non iusto corporis, voluptate nam quam illo at!</p>
+      {
+        !about
+          ? 'Loading...' :
+          <div
+            className={classes.about}
+          ><h3>{about.data.title[0].text}</h3>
+            <p>{about.data.text[0].text}</p>
 
-      </div>
+          </div>
+      }
 
     </>
   )

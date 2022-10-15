@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import './app.css'
 
 import Home from './components/Home/Home'
 import About from './components/About/About'
@@ -8,10 +7,13 @@ import Articles from './components/Articles/Articles'
 import PostPage from './components/PostPage'
 
 import { Route } from 'react-router-dom'
+import Header from './components/Header/Header'
+import StyledMainDiv from './styled/StyledMainDiv'
 
 function App () {
   return (
-    <div className={'main'}>
+    <StyledMainDiv>
+      <Header/>
       <Route
         exact
         path={'/'}
@@ -24,7 +26,7 @@ function App () {
         path={'/blog/:id'}
       ><PostPage/>
       </Route>
-    </div>
+    </StyledMainDiv>
   )
 }
 

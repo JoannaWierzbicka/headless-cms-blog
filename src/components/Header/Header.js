@@ -1,25 +1,34 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 
-import classes from './styles.module.css'
-import { NavLink } from 'react-router-dom'
+import StyledHeader from '../../styled/StyledHeader'
+import StyledMenu from '../../styled/StyledMenu'
+import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 export const Header = () => {
+  const activeStyle = { fontWeight: 700 }
   return (
-    <header
-      className={classes.header}
-    ><NavLink to={'/'}>My Blog</NavLink>
-      <div className={classes.menu}>
-        <NavLink to={'/about'}>About</NavLink>
-        <NavLink to={'/articles'}>Articles</NavLink>
-      </div>
+    <StyledHeader>
+      <NavLink
+        activeStyle={activeStyle}
+        to={'/'}
+      >My Blog
+      </NavLink>
+      <StyledMenu>
+        <NavLink
+          activeStyle={activeStyle}
+          to={'/about'}
+        >About
+        </NavLink>
+        <NavLink
+          activeStyle={activeStyle}
+          to={'/articles'}
+        >Articles
+        </NavLink>
+      </StyledMenu>
 
-    </header>
+    </StyledHeader>
+
   )
 }
-
-// Header.propTypes = {
-//   className: PropTypes.string
-// }
 
 export default Header

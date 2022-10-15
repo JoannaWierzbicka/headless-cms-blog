@@ -1,9 +1,7 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import classes from './styles.module.css'
-import Header from '../Header/Header'
+
 import BlogPost from '../BlogPost/BlogPost'
-// import posts from '../../posts'
+import StyledDiv from '../../styled/StyledDiv'
 
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
 
@@ -13,16 +11,14 @@ export const Home = () => {
   const posts = state === 'loaded' ? documents : ''
 
   return (
-    <div className={classes.home}>
-      <Header/>
+    <StyledDiv>
       {
         !posts
-          ? 'Loading...' :
+          ? <p>Loading...</p> :
           posts.map(post => {
             return (
               <div
                 key={post.uid}
-                className={classes.post}
               >
                 <BlogPost
                   {...post}
@@ -32,12 +28,8 @@ export const Home = () => {
 
           )
           }
-    </div>
+    </StyledDiv>
   )
 }
-
-// Home.propTypes = {
-//   className: PropTypes.string
-// }
 
 export default Home

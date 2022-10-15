@@ -1,12 +1,14 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React from 'react'
-// import PropTypes from 'prop-types'
+
 import { v4 as uuid } from 'uuid'
-import classes from './styles.module.css'
-import Header from '../Header/Header'
+
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
-import { useParams, NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
+import StyledArticle from '../../styled/StyledArticle'
+import StyledDiv from '../../styled/StyledDiv'
+import StyledImage from '../../styled/StyledImage'
+import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 export const PostPage = () => {
   const { id } = useParams()
@@ -19,33 +21,34 @@ export const PostPage = () => {
   })
 
   return (
-    <div >
-      <Header/>
+    <StyledDiv>
       {
         !data
-          ? 'Loading...' :
-          <><article className={classes.post}>
-            <h3>{data.data.title[0].text}</h3>
-            {data.data.text.map(text => {
-              return (<p key={uuid()}>{text.text}</p>)
-            })}
-            <img
-              src={data.data.image.url}
-              alt={data.data.image.alt}
-            />
-            <span>Published on: {data.data.date}</span>
-            </article>
-            <NavLink to={'/articles'}>View all posts</NavLink>
+          ? <p>Loading...</p> :
+          <>
+            <StyledArticle>
+              <h2>{data.data.title[0].text}</h2>
+              {data.data.text.map(text => {
+                return (<p key={uuid()}>{text.text}</p>)
+              })}
+              <StyledImage
+                src={data.data.image.url}
+                alt={data.data.image.alt}
+              />
+              <span
+                style={{
+                  fontSize: '10px',
+                  color: 'grey'
+                }}
+              >Published on: {data.data.date}
+              </span>
+            </StyledArticle>
+            <NavLink to={'/articles'}>{'--> View all posts <--'}</NavLink>
           </>
 
       }
-
-    </div>
+    </StyledDiv>
   )
 }
-
-// PostPage.propTypes = {
-//   className: PropTypes.string
-// }
 
 export default PostPage

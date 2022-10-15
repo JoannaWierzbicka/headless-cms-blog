@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
-// import PropTypes from 'prop-types'
-
-import classes from './styles.module.css'
-// import posts from '../../posts'
-import { NavLink } from 'react-router-dom'
-import Header from '../Header/Header'
 
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
+import StyledDiv from '../../styled/StyledDiv'
+import StyledList from '../../styled/StyledList'
+import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 export const Articles = () => {
   const [documents, { state }] = useAllPrismicDocumentsByType('post')
@@ -16,30 +12,27 @@ export const Articles = () => {
 
   return (
     <>
-      <Header/>
-      <div
-        className={classes.articles}
-      ><h3>Articles on blog: </h3>
-        <ul >
+      <StyledDiv ><h3>Articles on blog: </h3>
+        <ul style={{ padding: '0' }}>
           { !posts
             ? 'Loading...' :
             posts.map(post => (
-              <div
+              <StyledList
                 key={post.uid}
-                className={classes.articleList}
               >
                 <NavLink
+                  style={{ fontSize: '15px' }}
                   to={`/blog/${post.uid}`}
                 >{post.data.title[0].text}
                 </NavLink>
                 <span>{post.data.date}</span>
-              </div>
+              </StyledList>
 
             ))
   }
         </ul>
 
-      </div>
+      </StyledDiv>
     </>
 
   )

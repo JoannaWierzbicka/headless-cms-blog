@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
@@ -9,13 +10,15 @@ export const Articles = () => {
   const [documents, { state }] = useAllPrismicDocumentsByType('post')
 
   const posts = state === 'loaded' ? documents : ''
+  posts && posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
 
   return (
     <>
-      <StyledDiv ><h3>Articles on blog: </h3>
+      <StyledDiv>
+        <h3>Articles on blog: </h3>
         <ul style={{ padding: '0' }}>
           { !posts
-            ? 'Loading...' :
+            ? <p>Loading...</p> :
             posts.map(post => (
               <StyledList
                 key={post.uid}
@@ -27,7 +30,6 @@ export const Articles = () => {
                 </NavLink>
                 <span>{post.data.date}</span>
               </StyledList>
-
             ))
   }
         </ul>
@@ -37,9 +39,5 @@ export const Articles = () => {
 
   )
 }
-
-// Articles.propTypes = {
-//   className: PropTypes.string
-// }
 
 export default Articles

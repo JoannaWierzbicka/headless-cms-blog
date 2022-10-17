@@ -19,8 +19,4 @@ export const About = () => {
   )
 }
 
-// About.propTypes = {
-//   className: PropTypes.string
-// }
-
 export default About

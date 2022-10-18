@@ -11,12 +11,11 @@ import StyledDiv from '../../styled/StyledDiv'
 import StyledImage from '../../styled/StyledImage'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
+import Posts from '../../posts'
+
 export const PostList = () => {
   const { tag } = useParams()
-  console.log(tag)
-
-  const [documents, { state }] = useAllPrismicDocumentsByType('post')
-  const posts = state === 'loaded' ? documents : ''
+  const posts = Posts()
 
   const data = posts && posts.filter(post => {
     return post.tags[0] === tag
@@ -33,7 +32,7 @@ export const PostList = () => {
 
               <StyledArticle
                 key={post.uid}
-                className={'categoriesArticle'}
+                className={'categories-article'}
               >
                 <h2>{post.data.title[0].text}</h2>
                 <p>{post.data.text[0].text}...</p>
@@ -41,10 +40,10 @@ export const PostList = () => {
                 <StyledImage
                   src={post.data.image.url}
                   alt={post.data.image.alt}
-                  className={'categoriesImage'}
+                  className={'categories-image'}
                 />
                 <NavLink
-                  className={'categoriesNavLink'}
+                  className={'categories-link'}
                   to={`/blog/${post.uid}`}
                 >READ MORE
                 </NavLink>

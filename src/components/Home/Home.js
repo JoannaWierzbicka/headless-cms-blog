@@ -4,13 +4,12 @@ import BlogPost from '../BlogPost/BlogPost'
 import StyledDiv from '../../styled/StyledDiv'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
-import { useAllPrismicDocumentsByType } from '@prismicio/react'
+import Posts from '../../posts'
 
 export const Home = () => {
-  const [documents, { state }] = useAllPrismicDocumentsByType('post')
-  const [currentPage, setCurrentPage] = React.useState(1)
+  const posts = Posts()
 
-  const posts = state === 'loaded' ? documents : ''
+  const [currentPage, setCurrentPage] = React.useState(1)
 
   const postPerPage = 6
   const indexOfLastPost = currentPage * postPerPage
@@ -23,7 +22,6 @@ export const Home = () => {
   }
 
   const handleClick = (e) => {
-    console.log(e.target)
     setCurrentPage(e.target.id)
   }
 
@@ -40,12 +38,8 @@ export const Home = () => {
                 <BlogPost
                   {...post}
                 />
-
               </div>)
-          }
-
-          )
-          }
+          })}
       <StyledDiv className={'page-numbers'}>
         {pageNumbers.map(number => {
           return (

@@ -1,15 +1,13 @@
 import React from 'react'
 
-import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import StyledDiv from '../../styled/StyledDiv'
 import StyledList from '../../styled/StyledList'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
-export const Categories = () => {
-  const [documents, { state }] = useAllPrismicDocumentsByType('post')
+import Posts from '../../posts'
 
-  const posts = state === 'loaded' ? documents : ''
-  posts && posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+export const Categories = () => {
+  const posts = Posts()
 
   const categories = posts && posts.map(post => {
     return post.tags[0]
@@ -19,7 +17,7 @@ export const Categories = () => {
     <>
       <StyledDiv>
         <h3>Categories </h3>
-        <ul style={{ padding: '0' }}>
+        <ul style={{ padding: '0', display: 'flex', justifyContent: 'space-around' }}>
           { !categories
             ? <p>Loading...</p> :
             categories.map(category => {
@@ -28,9 +26,9 @@ export const Categories = () => {
                   key={category}
                 >
                   <NavLink
-                    style={{ fontSize: '15px' }}
+                    className={'category-list'}
                     to={`/categories/${category}`}
-                  >{category.toUpperCase()}
+                  >{category}
                   </NavLink>
                 </StyledList>)
             })

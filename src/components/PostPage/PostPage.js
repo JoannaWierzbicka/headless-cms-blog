@@ -2,7 +2,6 @@ import React from 'react'
 
 import { v4 as uuid } from 'uuid'
 
-import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import { useParams, Link } from 'react-router-dom'
 
 import StyledArticle from '../../styled/StyledArticle'
@@ -11,11 +10,12 @@ import StyledImage from '../../styled/StyledImage'
 import StyledFooter from '../../styled/StyledFooter'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
+import Posts from '../../posts'
+
 export const PostPage = () => {
   const { id } = useParams()
 
-  const [documents, { state }] = useAllPrismicDocumentsByType('post')
-  const posts = state === 'loaded' ? documents : ''
+  const posts = Posts()
 
   const data = posts && posts.find(post => {
     return post.uid === id
@@ -55,7 +55,6 @@ export const PostPage = () => {
             </StyledFooter>
 
           </>
-
       }
     </StyledDiv>
   )

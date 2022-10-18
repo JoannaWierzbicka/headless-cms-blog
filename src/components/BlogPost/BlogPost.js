@@ -12,7 +12,6 @@ export const BlogPost = (props) => {
       <p>{post.data.text[0].text}...</p>
       <Divider variant={'middle'} />
     </StyledArticle>
-
   )
 }
 

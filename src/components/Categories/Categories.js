@@ -3,6 +3,7 @@ import React from 'react'
 import StyledDiv from '../../styled/StyledDiv'
 import StyledList from '../../styled/StyledList'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
+import Divider from '@mui/material/Divider'
 
 import Posts from '../../posts'
 import Loader from '../Loader'
@@ -18,7 +19,7 @@ export const Categories = () => {
     <>
       <StyledDiv>
         <h3>Categories </h3>
-        <ul style={{ padding: '0', display: 'flex', justifyContent: 'space-around' }}>
+        <ul style={{ padding: '8px', display: 'flex' }}>
           { !categories
             ? <Loader/> :
             categories.map(category => {
@@ -29,8 +30,8 @@ export const Categories = () => {
                   <NavLink
                     className={'category-list'}
                     to={`/categories/${category}`}
-                  >{category}
-                  </NavLink>
+                  >{category.toUpperCase()}
+                  </NavLink><Divider orientation={'vertical'} />
                 </StyledList>)
             })
   }

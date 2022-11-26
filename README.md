@@ -1,6 +1,6 @@
 BLOG 
 
-Blog, którego zawartość pobierana jest przez API Prismica, wykorzystanie headless CMS.
+Wykorzystanie Headless CMS - Prismic.
 
 Aby uruchomić stronę:
 

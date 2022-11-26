@@ -1,6 +1,6 @@
 BLOG 
 
-Wykorzystanie Headless CMS - Prismic.
+Strona napisana z wykorzystaniem headless CMS (Prismic)
 
 Aby uruchomić stronę:
 
@@ -11,7 +11,9 @@ Aby uruchomić stronę:
 Stronę można zobaczyć również pod adresem
 ```
 https://joannawierzbicka.github.io/headless-cms-blog/
+```
 
 Projekt wykonany na kursie Akademia Samouka
 ```
 (https://akademiasamouka.pl/)
+```

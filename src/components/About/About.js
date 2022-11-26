@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useSinglePrismicDocument } from '@prismicio/react'
 import StyledDiv from '../../styled/StyledDiv'
+import Loader from '../Loader'
 
 export const About = () => {
   const [about] = useSinglePrismicDocument('about')
@@ -9,7 +10,7 @@ export const About = () => {
     <StyledDiv>
       {
         !about
-          ? <p>Loading...</p> :
+          ? <Loader/> :
           <div><h3>{about.data.title[0].text}</h3>
             <p>{about.data.text[0].text}</p>
 

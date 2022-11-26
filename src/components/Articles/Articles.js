@@ -5,6 +5,7 @@ import StyledList from '../../styled/StyledList'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 import Posts from '../../posts'
+import Loader from '../Loader'
 
 export const Articles = () => {
   const posts = Posts()
@@ -15,7 +16,7 @@ export const Articles = () => {
         <h3>Articles on blog: </h3>
         <ul style={{ padding: '0' }}>
           {!posts
-            ? <p>Loading...</p> :
+            ? <Loader/> :
             posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map(post => {
               return (
                 <StyledList

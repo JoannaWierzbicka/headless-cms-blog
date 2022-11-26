@@ -9,6 +9,7 @@ import StyledDiv from '../../styled/StyledDiv'
 import StyledImage from '../../styled/StyledImage'
 import StyledFooter from '../../styled/StyledFooter'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
+import Loader from '../Loader'
 
 import Posts from '../../posts'
 
@@ -25,7 +26,7 @@ export const PostPage = () => {
     <StyledDiv>
       {
         !data
-          ? <p>Loading...</p> :
+          ? <Loader/> :
           <>
             <StyledArticle>
               <h2>{data.data.title[0].text}</h2>

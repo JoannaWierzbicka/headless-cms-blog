@@ -5,6 +5,7 @@ import StyledDiv from '../../styled/StyledDiv'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 import Posts from '../../posts'
+import Loader from '../Loader'
 
 export const Home = () => {
   const posts = Posts()
@@ -29,7 +30,7 @@ export const Home = () => {
     <StyledDiv>
       {
         !currentPosts
-          ? <p>Loading...</p> :
+          ? <Loader/> :
           currentPosts.map(post => {
             return (
               <div

@@ -5,6 +5,7 @@ import StyledList from '../../styled/StyledList'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
 
 import Posts from '../../posts'
+import Loader from '../Loader'
 
 export const Categories = () => {
   const posts = Posts()
@@ -19,7 +20,7 @@ export const Categories = () => {
         <h3>Categories </h3>
         <ul style={{ padding: '0', display: 'flex', justifyContent: 'space-around' }}>
           { !categories
-            ? <p>Loading...</p> :
+            ? <Loader/> :
             categories.map(category => {
               return (
                 <StyledList

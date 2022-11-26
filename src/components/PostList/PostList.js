@@ -1,15 +1,12 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 
-import { v4 as uuid } from 'uuid'
-
-import { useAllPrismicDocumentsByType } from '@prismicio/react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import StyledArticle from '../../styled/StyledArticle'
 import StyledDiv from '../../styled/StyledDiv'
 import StyledImage from '../../styled/StyledImage'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
+import Loader from '../Loader'
 
 import Posts from '../../posts'
 
@@ -26,7 +23,7 @@ export const PostList = () => {
       <h3 style={{ textAlign: 'center' }}>{tag.toUpperCase()}</h3>
       {
         !data
-          ? <p>Loading...</p> :
+          ? <Loader/> :
           data.map(post => {
             return (
 

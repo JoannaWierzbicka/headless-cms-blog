@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/headless-cms-blog/static/css/main.3e3cb7ca.chunk.css",
+    "main.js": "/headless-cms-blog/static/js/main.8a63e653.chunk.js",
+    "main.js.map": "/headless-cms-blog/static/js/main.8a63e653.chunk.js.map",
+    "runtime-main.js": "/headless-cms-blog/static/js/runtime-main.af6ebc6b.js",
+    "runtime-main.js.map": "/headless-cms-blog/static/js/runtime-main.af6ebc6b.js.map",
+    "static/js/2.8fcbb870.chunk.js": "/headless-cms-blog/static/js/2.8fcbb870.chunk.js",
+    "static/js/2.8fcbb870.chunk.js.map": "/headless-cms-blog/static/js/2.8fcbb870.chunk.js.map",
+    "static/js/3.14101bd3.chunk.js": "/headless-cms-blog/static/js/3.14101bd3.chunk.js",
+    "static/js/3.14101bd3.chunk.js.map": "/headless-cms-blog/static/js/3.14101bd3.chunk.js.map",
+    "index.html": "/headless-cms-blog/index.html",
+    "static/css/main.3e3cb7ca.chunk.css.map": "/headless-cms-blog/static/css/main.3e3cb7ca.chunk.css.map",
+    "static/js/2.8fcbb870.chunk.js.LICENSE.txt": "/headless-cms-blog/static/js/2.8fcbb870.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af6ebc6b.js",
+    "static/js/2.8fcbb870.chunk.js",
+    "static/css/main.3e3cb7ca.chunk.css",
+    "static/js/main.8a63e653.chunk.js"
+  ]
+}

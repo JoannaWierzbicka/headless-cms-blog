@@ -7,7 +7,7 @@ import Loader from '../Loader'
 export const About = () => {
   const [about] = useSinglePrismicDocument('about')
   return (
-    <StyledDiv>
+    <StyledDiv className={'about'}>
       {
         !about
           ? <Loader/> :

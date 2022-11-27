@@ -30,20 +30,22 @@ export const PostList = () => {
               <StyledArticle
                 key={post.uid}
                 className={'categories-article'}
-              >
+              ><div>
                 <h2>{post.data.title[0].text}</h2>
                 <p>{post.data.text[0].text}...</p>
+                <NavLink
+                  className={'categories-link'}
+                  to={`/blog/${post.uid}`}
+                >READ MORE
+                </NavLink>
+              </div>
 
                 <StyledImage
                   src={post.data.image.url}
                   alt={post.data.image.alt}
                   className={'categories-image'}
                 />
-                <NavLink
-                  className={'categories-link'}
-                  to={`/blog/${post.uid}`}
-                >READ MORE
-                </NavLink>
+
               </StyledArticle>
             )
           })

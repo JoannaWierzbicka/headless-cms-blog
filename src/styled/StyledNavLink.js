@@ -6,38 +6,47 @@ font-size: 20px;
 text-decoration: none;
 color: black;
 &:hover{
-    color: green;
+    color: wheat;
+    background-color: #303030;
 }
 &.categories-link{
-    color: grey;
+    color: #303030;
     font-size: 12px;
+    margin: 6px;
+    padding: 12px;
+    &:hover{
+    color: wheat;
+}
 }
 &.page-link{
-    color: grey;
-    font-size: 12px;
-    padding-left: 50px
+    font-size: 14px;
+    color: wheat;
+    padding-left: 50px;
 }
 &.page-numbers{
-    font-size: 16px
+    font-size: 16px;
+    padding: 0
 }
 &.start-page{
     margin: 25px;
-    padding: 15px;
-    background-color: green;
-    color: black;
-    border-radius: 15px;
+    padding: 20px;
+    color: wheat;
+    font-weight: 700;
     &:hover{
-        background-color: #0080007a;
+        background-color: wheat;
+        color: #303030;
     }}
 &.category-list{
     font-size: 15px;
     padding: 2px 10px;
-    background-color: #D8D6F5;
-    border-radius: 5px;
     &:hover{
-        background-color: #a8a4e9;
-        color: black
+        background-color: #303030;
+        color: wheat;
+        border-radius: 10px;
     }
+}
+&.navlink-header{
+    color: wheat;
 }
 
 `

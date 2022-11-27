@@ -17,7 +17,7 @@ export const Categories = () => {
 
   return (
     <>
-      <StyledDiv>
+      <StyledDiv className={'categories'}>
         <h3>Categories </h3>
         <ul style={{ padding: '8px', display: 'flex' }}>
           { !categories

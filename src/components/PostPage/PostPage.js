@@ -28,11 +28,12 @@ export const PostPage = () => {
         !data
           ? <Loader/> :
           <>
-            <StyledArticle>
+            <StyledArticle className={'article'}>
               <h2>{data.data.title[0].text}</h2>
               {data.data.text.map(text => {
                 return (<p key={uuid()}>{text.text}</p>)
               })}
+
               <StyledImage
                 src={data.data.image.url}
                 alt={data.data.image.alt}
@@ -41,7 +42,12 @@ export const PostPage = () => {
             </StyledArticle>
             <StyledFooter>
               <span>Published on: {data.data.date}</span>
-              <span>Category: <Link to={`/categories/${data.tags}`}>{data.tags}</Link></span>
+              <span>Category: <Link
+                className={'link'}
+                to={`/categories/${data.tags}`}
+                              >{data.tags}
+              </Link>
+              </span>
               <NavLink
                 to={'/articles'}
                 className={'page-link'}

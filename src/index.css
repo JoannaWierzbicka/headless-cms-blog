@@ -1,11 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Karla', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  background-color: #aca7eb75;
+  background-color: rgb(246, 235, 215);
+
 }
 
 code {

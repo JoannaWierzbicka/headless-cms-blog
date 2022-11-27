@@ -11,11 +11,11 @@ import StartPage from './components/StartPage/StartPage'
 
 import { Route } from 'react-router-dom'
 import Header from './components/Header/Header'
-import StyledMainDiv from './styled/StyledMainDiv'
+import StyledDiv from './styled/StyledDiv'
 
 function App () {
   return (
-    <StyledMainDiv>
+    <StyledDiv>
       <Header/>
       <Route
         exact
@@ -41,7 +41,7 @@ function App () {
       ><PostList/>
       </Route>
 
-    </StyledMainDiv>
+    </StyledDiv>
   )
 }
 

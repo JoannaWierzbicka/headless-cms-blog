@@ -3,6 +3,7 @@ import React from 'react'
 import StyledDiv from '../../styled/StyledDiv'
 import StyledList from '../../styled/StyledList'
 import { StyledNavLink as NavLink } from '../../styled/StyledNavLink'
+import StyledUl from '../../styled/StyledUl'
 
 import Posts from '../../posts'
 import Loader from '../Loader'
@@ -12,9 +13,9 @@ export const Articles = () => {
 
   return (
     <>
-      <StyledDiv>
+      <StyledDiv className={'articles-list'}>
         <h3>Articles on blog: </h3>
-        <ul style={{ padding: '0' }}>
+        <StyledUl>
           {!posts
             ? <Loader/> :
             posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).map(post => {
@@ -30,7 +31,7 @@ export const Articles = () => {
                   <span>{post.data.date}</span>
                 </StyledList>)
             })}
-        </ul>
+        </StyledUl>
       </StyledDiv>
     </>
   )

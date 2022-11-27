@@ -9,22 +9,26 @@ export const Header = () => {
   return (
     <StyledHeader>
       <NavLink
+        className={'navlink-header'}
         activeStyle={activeStyle}
         to={'/'}
       >My Blog
       </NavLink>
       <StyledMenu>
         <NavLink
+          className={'navlink-header'}
           activeStyle={activeStyle}
           to={'/about'}
         >About
         </NavLink>
         <NavLink
+          className={'navlink-header'}
           activeStyle={activeStyle}
           to={'/categories'}
         >Categories
         </NavLink>
         <NavLink
+          className={'navlink-header'}
           activeStyle={activeStyle}
           to={'/articles'}
         >Articles

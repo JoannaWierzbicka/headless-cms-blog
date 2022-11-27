@@ -47,6 +47,7 @@ color: black;
 }
 &.navlink-header{
     color: wheat;
+ 
 }
 
 `

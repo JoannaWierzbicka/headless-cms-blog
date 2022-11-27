@@ -6,6 +6,9 @@ export const StyledArticle = styled.article`
 &.categories-article{
     font-size: 12px;
     display: flex;
+    @media only screen and (max-width: 790px){
+    flex-direction: column;
+}
 
 }
 `
